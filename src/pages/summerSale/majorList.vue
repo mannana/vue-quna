@@ -1,7 +1,5 @@
 <template>
     <div class="container">
-
-
     <img class="topic-img" alt="戏水大作战" src="//s.qunarzz.com/piao_topic/image/touch/custom/2016/1772travel10/170710/caption1.jpg" />
     <ul class="list">
         <li class="item" v-for="item in majorList" key="item.id">

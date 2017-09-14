@@ -6,28 +6,28 @@
                     <dl class="filter-group">
                         <dt class="filter-label">玩法分类</dt>
                         <dd class="filter-value">
-                            <div class="filter-list">
-                                    <span class="filter-item filter-active">冲浪漂流</span>
-                                    <span class="filter-item">峡谷风光</span>
-                                    <span class="filter-item">水上乐园</span>
-                                    <span class="filter-item">全部</span>
+                            <div class="filter-list" @click="handleCategoriesFilter">
+                                    <span index="0" class="filter-item" :class="{'filter-active':cateFilterInde==='0'}">冲浪漂流</span>
+                                    <span index="1" class="filter-item" :class="{'filter-active':cateFilterInde==='1'}">峡谷风光</span>
+                                    <span index="2" class="filter-item" :class="{'filter-active':cateFilterInde==='2'}">水上乐园</span>
+                                    <span index="3" class="filter-item" :class="{'filter-active':cateFilterInde==='3'}">全部</span>
                             </div>
                         </dd>
                     </dl>
                     <dl class="filter-group">
                         <dt class="filter-label">推荐排序</dt>
                         <dd class="filter-value">
-                            <div class="filter-list">
-                                    <span class="filter-item filter-active">销量最高</span>
-                                    <span class="filter-item">价格最低</span>
-                                    <span class="filter-item">离我最近</span>
-                                    <span class="filter-item">全部</span>
+                            <div class="filter-list" @click="handleSortFilter">
+                                    <span index="0" :class="{'filter-active':filterIndex==='0'}" class="filter-item">销量最高</span>
+                                    <span index="1" :class="{'filter-active':filterIndex==='1'}" class="filter-item">价格最低</span>
+                                    <span index="2" :class="{'filter-active':filterIndex==='2'}" class="filter-item">离我最近</span>
+                                    <span index="3" :class="{'filter-active':filterIndex==='3'}" class="filter-item">全部</span>
                             </div>
                         </dd>
                     </dl>
             </div>
             <ul class="sub-list">
-                <li class="sub-item" v-for="item in recommenList">
+                <li class="sub-item" v-for="item in filter">
                     <router-link to="/summerSale">
                         <div class="sub-show">
                             <img class="img-small" :alt="item.name" :src="item.imgUrl" />
@@ -51,7 +51,39 @@
 export default{
     props:["recommenList"],
     data() {
-        return {}
+        return {
+            filterIndex:"0",
+            cateFilterInde:"0"
+        }
+    },
+    methods:{
+        handleCategoriesFilter: function(e){
+            if(e.target.tagName == "SPAN"){
+                this.cateFilterInde=e.target.getAttribute("index");
+            }
+        },
+        handleSortFilter: function(e){
+            if(e.target.tagName == "SPAN"){
+                this.filterIndex=e.target.getAttribute("index");
+            }
+        }
+    },
+    computed:{
+        filter:function() {
+            var recommenList = JSON.parse(JSON.stringify(this.recommenList));
+            if(this.filterIndex==='0'){
+                return recommenList.sort((a,b) => {
+                    return b["sales"]-a["sales"];
+                });
+            }
+            if(this.filterIndex==='1'){
+                return recommenList.sort((a,b) => {
+                    return a["price"]-b["price"];
+                });
+            }
+
+            return recommenList;
+        }
     }
 }
 </script>
@@ -115,7 +147,6 @@ export default{
     line-height: 0;
     white-space: nowrap;
 }
-
 .filter-item {
     display: inline-block;
     overflow: hidden;
@@ -205,7 +236,6 @@ export default{
 .price {
     font: .24rem "Microsoft yahei","Hiragino sans gb",Arial,sans-serif;
 }
-
 .price-num {
     font: .28rem Tahoma,Helvetica,sans-serif;
 }

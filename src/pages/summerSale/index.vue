@@ -64,9 +64,7 @@ export default {
             items:[]
         }
     }
-
 }
-
 </script>
 
 <style>

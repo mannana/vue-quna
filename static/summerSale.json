@@ -8,6 +8,7 @@
             "tag":"特惠票",
             "price": "9.9",
             "marketPrice": "35",
+            "sales":"1000",
             "city":"北京"
         },{
             "id": 2,
@@ -17,6 +18,7 @@
             "tag":"促销票",
             "price": "29.9",
             "marketPrice": "180",
+            "sales":"2000",
             "city":"北京"
         },{
             "id": 3,
@@ -26,6 +28,7 @@
             "tag":"5折",
             "price": "163",
             "marketPrice": "165",
+            "sales":"1200",
             "city":"北京"
         },{
             "id": 4,
@@ -35,6 +38,7 @@
             "tag":"",
             "price": "40",
             "marketPrice": "50",
+            "sales":"1500",
             "city":"北京"
         },{
             "id": 5,
@@ -44,6 +48,7 @@
             "tag":"5折",
             "price": "35",
             "marketPrice": "40",
+            "sales":"1100",
             "city":"北京"
         },{
             "id": 6,
@@ -53,6 +58,7 @@
             "tag":"",
             "price": "48",
             "marketPrice": "60",
+            "sales":"3000",
             "city":"北京"
         },{
             "id": 7,
@@ -62,6 +68,7 @@
             "tag":"",
             "price": "56",
             "marketPrice": "128",
+            "sales":"500",
             "city":"北京"
         },{
             "id": 8,
@@ -71,6 +78,7 @@
             "tag":"",
             "price": "52",
             "marketPrice": "60",
+            "sales":"1600",
             "city":"北京"
         },{
             "id": 9,
@@ -80,6 +88,17 @@
             "tag":"",
             "price": "127",
             "marketPrice": "178",
+            "sales":"1210",
+            "city":"北京"
+        },{
+            "id": 10,
+            "name":"雾灵西峰高山滑水",
+            "productName":"北京雾灵西峰高山滑水成人票（下单成功4小时后生效）",
+            "imgUrl":"https://img1.qunarzz.com/sight/p0/1506/ea/55a4d88885163b9e31eb57992ea41846.water.jpg_600x276_cc1bc90d.jpg",
+            "tag":"5折",
+            "price": "35",
+            "marketPrice": "40",
+            "sales":"1100",
             "city":"北京"
         }]
     }
